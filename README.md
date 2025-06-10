@@ -1,5 +1,5 @@
 ## Grupo A - Equipo 1
-_Curso de Programación Asistida con IA - Chicas en Tecnología_ 🚀
+_Curso de Programación Asistida con Inteligencia artificial - Chicas en Tecnología_ 🚀
 
 En este repositorio, se presenta el sitio web realizado durante el curso de programación frontend de CET.
 
