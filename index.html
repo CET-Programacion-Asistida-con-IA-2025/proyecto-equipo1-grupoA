@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Bienestar Importa</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1> Salud mental </h1>
+            <ul>
+                <li><a href="#info">Información</a></li>
+                <li><a href="#historia">Tu Historia</a></li>
+                <li><a href="#ayuda">Ayuda</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Sección Hero -->
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Tu salud mental es importante</h2>
+                <p>Recursos y apoyo para el bienestar mental y discapacidades en Argentina</p>
+                <button class="btn-emergency" onclick="mostrarEmergencia()">
+                    📞 Ayuda Inmediata
+                </button>
+            </div>
+        </section>
+
+        <!-- Sección de Información -->
+        <section id="info" class="info-section">
+            <div class="container">
+                <h2>Información y Recursos</h2>
+                
+                <div class="stats">
+                    <div class="stat-card">
+                        <h3>1 de cada 4</h3>
+                        <p>argentinos experimenta problemas de salud mental</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>12.9%</h3>
+                        <p>de la población argentina vive con alguna discapacidad</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>80%</h3>
+                        <p>mejora con tratamiento adecuado</p>
+                    </div>
+                </div>
+
+                <div class="resources">
+                    <div class="resource-card">
+                        <h3>🧠 Salud Mental</h3>
+                        <p>Información sobre ansiedad, depresión y otros trastornos</p>
+                        <ul>
+                            <li><a href="#">@saludmentalar</a></li>
+                            <li><a href="#">@psicologos.ar</a></li>
+                            <li><a href="#">@mentesana_argentina</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="resource-card">
+                        <h3>♿ Discapacidades</h3>
+                        <p>Apoyo e información sobre discapacidades</p>
+                        <ul>
+                            <li><a href="#">@discapacidad_ar</a></li>
+                            <li><a href="#">@inclusion_argentina</a></li>
+                            <li><a href="#">@conadis_ar</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Historia -->
+        <section id="historia" class="story-section">
+            <div class="container">
+                <h2>Comparte tu experiencia</h2>
+                <p>Tu historia puede ayudar a otros</p>
+                
+                <form id="storyForm">
+                    <input type="text" placeholder="Tu nombre (opcional)" id="nombre">
+                    
+                    <select id="categoria" required>
+                        <option value="">Selecciona una categoría</option>
+                        <option value="ansiedad">Ansiedad</option>
+                        <option value="depresion">Depresión</option>
+                        <option value="discapacidad">Discapacidad</option>
+                        <option value="otros">Otros</option>
+                    </select>
+                    
+                    <textarea placeholder="Cuenta tu historia..." id="historia" required></textarea>
+                    
+                    <label>
+                        <input type="checkbox" id="anonimo">
+                        Publicar de forma anónima
+                    </label>
+                    
+                    <button type="submit">Compartir Historia</button>
+                </form>
+
+                <div class="stories-container">
+                    <h3>Historias compartidas</h3>
+                    <div id="stories-list">
+                        <div class="story-item">
+                            <div class="story-header">
+                                <span>Juan, 25 años</span>
+                                <span class="category">Ansiedad</span>
+                            </div>
+                            <p>"Buscar ayuda fue el primer paso para sentirme mejor. No están solos."</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Ayuda -->
+        <section id="ayuda" class="help-section">
+            <div class="container">
+                <h2>¿Necesitas ayuda?</h2>
+                <p>Líneas de crisis disponibles en Argentina</p>
+                
+                <div class="emergency-numbers">
+                    <div class="emergency-card">
+                        <h3>📞 Línea 135</h3>
+                        <p>Atención las 24 horas</p>
+                        <a href="tel:135">135</a>
+                    </div>
+                    
+                    <div class="emergency-card">
+                        <h3>🆘 Centro de Asistencia al Suicida</h3>
+                        <p>Buenos Aires - 24 horas</p>
+                        <a href="tel:1145816111">(11) 4581-6111</a>
+                    </div>
+                    
+                    <div class="emergency-card">
+                        <h3>🚨 Emergencias</h3>
+                        <p>Para emergencias médicas</p>
+                        <a href="tel:107">107</a>
+                    </div>
+                </div>
+
+                <div class="help-note">
+                    <p><strong>Importante:</strong> Si sientes que puedes hacerte daño, busca ayuda inmediatamente. Llama al 135 o al 107.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal de Emergencia -->
+    <div id="emergencyModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="cerrarModal()">&times;</span>
+            <h2>Números de Emergencia - Argentina</h2>
+            <div class="emergency-list">
+                <div class="emergency-item">
+                    <strong>Línea 135:</strong>
+                    <a href="tel:135">135</a>
+                </div>
+                <div class="emergency-item">
+                    <strong>Centro de Asistencia al Suicida:</strong>
+                    <a href="tel:1145816111">(11) 4581-6111</a>
+                </div>
+                <div class="emergency-item">
+                    <strong>Emergencia Médica:</strong>
+                    <a href="tel:107">107</a>
+                </div>
+                <div class="emergency-item">
+                    <strong>Línea de Violencia:</strong>
+                    <a href="tel:144">144</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Bienestar Mental Argentina. Información de recursos públicos.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
