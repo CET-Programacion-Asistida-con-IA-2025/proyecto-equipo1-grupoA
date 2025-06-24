@@ -7,22 +7,21 @@
 
 /* Variables de colores inspiradas en el moodboard */
 :root {
-    --color-primary: #977051;
-    --color-secondary: #b994b3f5;
+    --color-primary: #3d342c;
+    --color-secondary: #947d90f5;
     --color-light: #F5F1EB;
     --color-cream: #FAF7F2;
-    --color-sage: #88af94;
+    --color-sage: #62816c;
     --color-blue: #abc2e0;
     --color-white: #FFFFFF;
-    --color-text: #443333;
+    --color-text: #272323;
     --color-text-light: #8a8282;
 }
 
 /* Estilos base */
 body {
-    font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    color: var(--color-primary);
+    color: var(--color-text-light);
     background-color: var(--color-secondary);
 }
 
@@ -34,7 +33,7 @@ body {
 
 /* Header y navegación */
 header {
-    background: var(--color-white);
+    background: var(--color-text-light);
     padding: 1rem 0;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     position: fixed;
@@ -98,7 +97,7 @@ nav a:hover {
 }
 
 .btn-emergency {
-    background: var(--color-sage);
+    background: var( --color-sage);
     color: white;
     border: none;
     padding: 15px 30px;
