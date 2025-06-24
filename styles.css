@@ -22,8 +22,8 @@
 body {
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    color: var(--color-text);
-    background-color: var(--color-cream);
+    color: var(--color-primary);
+    background-color: var(--color-secondary);
 }
 
 .container {
