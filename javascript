@@ -22,6 +22,8 @@ let historias = [
         categoria: "Ansiedad",
         historia: "Buscar ayuda fue el primer paso para sentirme mejor. No están solos.",
         anonimo: false
+        
+        nombre: "Martima, 13 años"
     }
 ];
 

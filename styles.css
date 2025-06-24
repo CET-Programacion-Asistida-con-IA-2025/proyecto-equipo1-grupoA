@@ -324,12 +324,12 @@ form button:hover {
 
 /* Help section */
 .help-section {
-    background: var(--color-sage);
+    background: var(--color-text-light);
     color: white;
 }
 
-.help-section h2,
-.help-section p {
+.help-section h2, 
+.help-section p 
     color: white;
 }
 
@@ -393,6 +393,34 @@ form button:hover {
     max-width: 600px;
     margin: 0 auto;
 }
+ /* Sección de Aprende Más */
+  .learn-section h2 {
+    background: var(--color-text-light);
+    color: white;
+  }
+
+  .learn-card h3 {
+    background: var(--color-text-light)
+    color white;
+  }
+  
+
+  .learn-card p {
+display: inline-block;
+    background: var(--color-text-light);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: background 0.3s;
+}
+  .learn-card h3 {
+    background: var(--color-text-light)
+    color: white;
+  }
+
 
 /* Modal */
 .modal {
