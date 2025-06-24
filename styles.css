@@ -7,15 +7,15 @@
 
 /* Variables de colores inspiradas en el moodboard */
 :root {
-    --color-primary: #8B7355;
-    --color-secondary: #A68B7A;
+    --color-primary: #977051;
+    --color-secondary: #b994b3f5;
     --color-light: #F5F1EB;
     --color-cream: #FAF7F2;
-    --color-sage: #9CAF88;
-    --color-blue: #B8C5D6;
+    --color-sage: #88af94;
+    --color-blue: #abc2e0;
     --color-white: #FFFFFF;
-    --color-text: #3A3A3A;
-    --color-text-light: #6B6B6B;
+    --color-text: #443333;
+    --color-text-light: #8a8282;
 }
 
 /* Estilos base */
