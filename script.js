@@ -21,9 +21,9 @@ let historias = [
         nombre: "Juan, 25 años",
         categoria: "Ansiedad",
         historia: "Buscar ayuda fue el primer paso para sentirme mejor. No están solos.",
-        anonimo: false
+        anonimo: false,
         
-        nombre: "Martima, 13 años"
+        nombre: "Martima, 13 años",
     }
 ];
 
@@ -274,4 +274,6 @@ document.addEventListener('DOMContentLoaded', function() {
             to { opacity: 1; transform: translateY(0); }
         }
     `;
-    document.head.
+     
+    document.head.appendChild(style);
+});
