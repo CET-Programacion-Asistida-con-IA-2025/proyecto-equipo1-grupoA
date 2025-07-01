@@ -45,12 +45,9 @@ MentalCare es una plataforma web diseñada para brindar apoyo, recursos y herram
 ## 🛠️ Tecnologías Utilizadas
 
 ### Frontend
-- **React 18** - Biblioteca principal para la interfaz de usuario
-- **TypeScript** - Tipado estático para mayor robustez
-- **Tailwind CSS** - Framework de diseño accesible
-- **React Hook Form** - Gestión de formularios accesibles
-- **Framer Motion** - Animaciones suaves y accesibles
-
+- javascript
+- html
+- css
 
   <i>"La salud mental no es un destino, sino un proceso. No se trata de dónde has estado, sino de dónde estás y hacia dónde te diriges."</i>
 </p>
