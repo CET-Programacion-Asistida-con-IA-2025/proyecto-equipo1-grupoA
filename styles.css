@@ -17,12 +17,13 @@
     --color-text: #272323;
     --color-text-light: #c596b3;
 }
-
+ 
 /* Estilos base */
 body {
     line-height: 1.6;
     color: var(--color-text-light);
     background-color: var(--color-secondary);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 
 .container {
@@ -54,6 +55,7 @@ nav {
 nav h1 {
     color: var(--color-light);
     font-size: 1.5rem;
+  
 }
 
 nav ul {
@@ -522,4 +524,72 @@ footer {
         margin: 20% auto;
         width: 95%;
     }
+
+    .emoji-decor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 999;
+}
+
+.emoji-decor span {
+  position: absolute;
+  font-size: 24px;
+  animation: floatEmoji 10s linear infinite;
+  opacity: 0.8;
+}
+
+.emoji-decor span:nth-child(1) {
+  top: 10%;
+  left: 5%;
+  animation-delay: 0s;
+}
+
+.emoji-decor span:nth-child(2) {
+  top: 30%;
+  left: 85%;
+  animation-delay: 2s;
+}
+
+.emoji-decor span:nth-child(3) {
+  top: 60%;
+  left: 10%;
+  animation-delay: 4s;
+}
+
+.emoji-decor span:nth-child(4) {
+  top: 80%;
+  left: 90%;
+  animation-delay: 1s;
+}
+
+.emoji-decor span:nth-child(5) {
+  top: 50%;
+  left: 45%;
+  animation-delay: 3s;
+}
+
+.emoji-decor span:nth-child(6) {
+  top: 20%;
+  left: 60%;
+  animation-delay: 5s;
+}
+
+@keyframes floatEmoji {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(-10px) rotate(15deg);
+  }
+  100% {
+    transform: translateY(0) rotate(-15deg);
+    opacity: 0.8;
+  }
+}
 }
