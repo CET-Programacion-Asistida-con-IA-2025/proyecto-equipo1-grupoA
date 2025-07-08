@@ -8,14 +8,14 @@
 /* Variables de colores inspiradas en el moodboard */
 :root {
     --color-primary: #3d342c;
-    --color-secondary: #caaac5f5;
-    --color-light: #d6d0c8;
-    --color-cream: #ffefd1e8;
-    --color-sage: #6e967b;
-    --color-blue: #abc2e0;
+    --color-secondary: #e29b9be0;
+    --color-light: #eed3d3;
+    --color-cream: #f5ebd7e8;
+    --color-sage: #c2e299;
+    --color-blue: #d6e098;
     --color-white: #FFFFFF;
     --color-text: #272323;
-    --color-text-light: #c596b3;
+    --color-text-light: #c5677b;
 }
  
 /* Estilos base */
@@ -53,7 +53,7 @@ nav {
 }
 
 nav h1 {
-    color: var(--color-light);
+    color: var(--color-text);
     font-size: 1.5rem;
   
 }
