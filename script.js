@@ -15,15 +15,19 @@ window.onclick = function(event) {
     }
 }
 
-// Array para almacenar las historias
+// Array para almacenar las historias --> es un array de objetos, pueden ver la clase extra para mas info!
 let historias = [
     {
         nombre: "Juan, 25 años",
         categoria: "Ansiedad",
         historia: "Buscar ayuda fue el primer paso para sentirme mejor. No están solos.",
+        anonimo: false,        
+    },
+	{
+        nombre: "Martina, 13 años",
+        categoria: "Trastornos alimenticios",
+        historia: "Buscar ayuda fue el primer paso para sentirme mejor. No están solos.",
         anonimo: false,
-        
-        nombre: "Martima, 13 años",
     }
 ];
 
@@ -80,6 +84,7 @@ function agregarHistoria(event) {
     
     // Limpiar el formulario
     document.getElementById('storyForm').reset();
+    actualizarContador(); // como parte del reset, que el contador de caracteres se actualice a cero nuevamente
     
     // Mostrar mensaje de confirmación
     alert('¡Gracias por compartir tu historia! Tu experiencia puede ayudar a otros.');
@@ -175,7 +180,6 @@ function toggleInfo(button) {
 // Contador de caracteres para el textarea
 function contadorCaracteres() {
     const textarea = document.getElementById('historia');
-    const maxLength = 500;
     
     // Crear elemento contador
     const contador = document.createElement('div');
@@ -187,20 +191,23 @@ function contadorCaracteres() {
     
     textarea.insertAdjacentElement('afterend', contador);
     
-    // Actualizar contador
-    function actualizarContador() {
-        const current = textarea.value.length;
-        contador.textContent = `${current}/${maxLength} caracteres`;
-        
-        if (current > maxLength * 0.9) {
-            contador.style.color = '#ff6b6b';
-        } else {
-            contador.style.color = '#6B6B6B';
-        }
-    }
-    
     textarea.addEventListener('input', actualizarContador);
     actualizarContador();
+}
+    
+// Actualizar contador
+function actualizarContador() {
+    const textarea = document.getElementById('historia');
+    const maxLength = 500;
+	
+	const current = textarea.value.length;
+	contador.textContent = `${current}/${maxLength} caracteres`;
+	
+	if (current > maxLength * 0.9) {
+		contador.style.color = '#ff6b6b';
+	} else {
+		contador.style.color = '#6B6B6B';
+	}
 }
 
 // Función para detectar crisis en el texto (palabras clave)
