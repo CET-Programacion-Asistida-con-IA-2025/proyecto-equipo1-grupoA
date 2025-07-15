@@ -55,7 +55,6 @@ nav {
 nav h1 {
     color: var(--color-text);
     font-size: 1.5rem;
-  
 }
 
 nav ul {
@@ -324,6 +323,93 @@ form button:hover {
     font-style: italic;
 }
 
+/* Estilos para comentarios */
+.comments-section {
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ddd;
+}
+
+.comment-form {
+    background: var(--color-light);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+}
+
+.comment-form h4 {
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.comment-form input,
+.comment-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.comment-form textarea {
+    height: 80px;
+    resize: vertical;
+}
+
+.comment-form button {
+    background: var(--color-sage);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.comment-form button:hover {
+    background: #7A9870;
+}
+
+.comments-list {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.comment-item {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    border-left: 3px solid var(--color-sage);
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.5rem;
+}
+
+.comment-author {
+    font-weight: bold;
+    color: var(--color-primary);
+    font-size: 0.9rem;
+}
+
+.comment-date {
+    color: var(--color-text-light);
+    font-size: 0.8rem;
+}
+
+.comment-text {
+    color: var(--color-text);
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
 /* Help section */
 .help-section {
     background: var(--color-text-light);
@@ -332,8 +418,6 @@ form button:hover {
 
 .help-section h2, 
 .help-section p {
-
-
     color: white;
 }
 
@@ -397,33 +481,6 @@ form button:hover {
     max-width: 600px;
     margin: 0 auto;
 }
- /* Sección de Aprende Más */
-  .learn-section h2 {
-    background: var(--color-blue);
-    color: var(--color-blue);
-  }
-
-  .learn-card h3 {
-    background: var(--color-text-light)
-    color --color-blue;
-  }
-  
-
-  .learn-card p {
-display: inline-block;
-    background: var(--color-text-light);
-    color: white;
-    padding: 12px 25px;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1.2rem;
-  }
-  .learn-card h3 {
-    background: var(--color-text-light);
-    color: white;
-  }
-
 
 /* Modal */
 .modal {
@@ -524,72 +581,4 @@ footer {
         margin: 20% auto;
         width: 95%;
     }
-
-    .emoji-decor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 999;
-}
-
-.emoji-decor span {
-  position: absolute;
-  font-size: 24px;
-  animation: floatEmoji 10s linear infinite;
-  opacity: 0.8;
-}
-
-.emoji-decor span:nth-child(1) {
-  top: 10%;
-  left: 5%;
-  animation-delay: 0s;
-}
-
-.emoji-decor span:nth-child(2) {
-  top: 30%;
-  left: 85%;
-  animation-delay: 2s;
-}
-
-.emoji-decor span:nth-child(3) {
-  top: 60%;
-  left: 10%;
-  animation-delay: 4s;
-}
-
-.emoji-decor span:nth-child(4) {
-  top: 80%;
-  left: 90%;
-  animation-delay: 1s;
-}
-
-.emoji-decor span:nth-child(5) {
-  top: 50%;
-  left: 45%;
-  animation-delay: 3s;
-}
-
-.emoji-decor span:nth-child(6) {
-  top: 20%;
-  left: 60%;
-  animation-delay: 5s;
-}
-
-@keyframes floatEmoji {
-  0% {
-    transform: translateY(0) rotate(0deg);
-    opacity: 0.8;
-  }
-  50% {
-    opacity: 1;
-    transform: translateY(-10px) rotate(15deg);
-  }
-  100% {
-    transform: translateY(0) rotate(-15deg);
-    opacity: 0.8;
-  }
-}
 }
