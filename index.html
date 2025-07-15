@@ -93,7 +93,6 @@
                         <option value="trastornos alimenticios">Trastornos alimenticios</option>
                         <option value="trastorno de panico">trastorno de panico</option>
                         <option value="otros">Otros</option>
-
                     </select>
                     
                     <textarea placeholder="Cuenta tu historia..." id="historia" required></textarea>
@@ -115,6 +114,26 @@
                                 <span class="category">Ansiedad</span>
                             </div>
                             <p>"Buscar ayuda fue el primer paso para sentirme mejor. No están solos."</p>
+                            
+                            <!-- Sección de comentarios para cada historia -->
+                            <div class="comments-section">
+                                <div class="comment-form">
+                                    <h4>💬 Deja un comentario</h4>
+                                    <input type="text" placeholder="Tu nombre (opcional)" class="comment-name">
+                                    <textarea placeholder="Escribe tu comentario..." class="comment-text" required></textarea>
+                                    <button type="button" onclick="agregarComentario(this)">Comentar</button>
+                                </div>
+                                
+                                <div class="comments-list">
+                                    <div class="comment-item">
+                                        <div class="comment-header">
+                                            <span class="comment-author">María</span>
+                                            <span class="comment-date">Hace 2 horas</span>
+                                        </div>
+                                        <div class="comment-text">Gracias por compartir tu experiencia. Me ayudó mucho leer esto.</div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -172,8 +191,6 @@
                         <li><a href="#"><strong>"Cómo hacer que te pasen cosas buenas"</strong> – Marian Rojas Estapé<br>
                         <strong>"El arte de no amargarse la vida"</strong> – Rafael Santandreu<br>
                         <strong>"Sé amable contigo mismo"</strong> – Kristin Neff</a></li>
-
-
                     </div>
     
     <!-- Modal de Emergencia -->
