@@ -15,32 +15,102 @@ window.onclick = function(event) {
     }
 }
 
-// Array para almacenar las historias --> es un array de objetos, pueden ver la clase extra para mas info!
+// Array para almacenar las historias con comentarios
 let historias = [
     {
         nombre: "Juan, 25 años",
         categoria: "Ansiedad",
         historia: "Buscar ayuda fue el primer paso para sentirme mejor. No están solos.",
-        anonimo: false,        
+        anonimo: false,
+        comentarios: [
+            {
+                nombre: "María",
+                comentario: "Gracias por compartir tu experiencia. Me ayudó mucho leer esto.",
+                fecha: new Date(Date.now() - 2 * 60 * 60 * 1000) // Hace 2 horas
+            }
+        ]
     },
-	{
+    {
         nombre: "Martina, 13 años",
         categoria: "Trastornos alimenticios",
         historia: "Buscar ayuda fue el primer paso para sentirme mejor. No están solos.",
         anonimo: false,
+        comentarios: []
     }
 ];
 
-// Función para mostrar las historias
+// Función para formatear fecha relativamente
+function formatearFecha(fecha) {
+    const ahora = new Date();
+    const diferencia = ahora - fecha;
+    const minutos = Math.floor(diferencia / (1000 * 60));
+    const horas = Math.floor(diferencia / (1000 * 60 * 60));
+    const dias = Math.floor(diferencia / (1000 * 60 * 60 * 24));
+    
+    if (minutos < 60) {
+        return `Hace ${minutos} minutos`;
+    } else if (horas < 24) {
+        return `Hace ${horas} horas`;
+    } else {
+        return `Hace ${dias} días`;
+    }
+}
+
+// Función para agregar comentario
+function agregarComentario(boton) {
+    const comentarioForm = boton.closest('.comment-form');
+    const storyItem = boton.closest('.story-item');
+    const storyIndex = Array.from(document.querySelectorAll('.story-item')).indexOf(storyItem);
+    
+    const nombre = comentarioForm.querySelector('.comment-name').value || 'Anónimo';
+    const comentarioTexto = comentarioForm.querySelector('.comment-text').value;
+    
+    if (!comentarioTexto.trim()) {
+        alert('Por favor escribe un comentario');
+        return;
+    }
+    
+    // Crear nuevo comentario
+    const nuevoComentario = {
+        nombre: nombre,
+        comentario: comentarioTexto,
+        fecha: new Date()
+    };
+    
+    // Agregar al array de comentarios de la historia
+    historias[storyIndex].comentarios.unshift(nuevoComentario);
+    
+    // Actualizar la vista
+    mostrarHistorias();
+    
+    // Mostrar mensaje de confirmación
+    alert('¡Comentario agregado exitosamente!');
+}
+
+// Función para mostrar las historias con comentarios
 function mostrarHistorias() {
     const container = document.getElementById('stories-list');
     container.innerHTML = '';
     
-    historias.forEach(historia => {
+    historias.forEach((historia, index) => {
         const storyDiv = document.createElement('div');
         storyDiv.className = 'story-item';
         
         const nombre = historia.anonimo ? 'Anónimo' : historia.nombre;
+        
+        // Generar HTML de comentarios
+        let comentariosHTML = '';
+        historia.comentarios.forEach(comentario => {
+            comentariosHTML += `
+                <div class="comment-item">
+                    <div class="comment-header">
+                        <span class="comment-author">${comentario.nombre}</span>
+                        <span class="comment-date">${formatearFecha(comentario.fecha)}</span>
+                    </div>
+                    <p class="comment-text">${comentario.comentario}</p>
+                </div>
+            `;
+        });
         
         storyDiv.innerHTML = `
             <div class="story-header">
@@ -48,6 +118,22 @@ function mostrarHistorias() {
                 <span class="category">${historia.categoria}</span>
             </div>
             <p>"${historia.historia}"</p>
+            
+            <div class="comments-section">
+                <h4>Comentarios (${historia.comentarios.length})</h4>
+                
+                <div class="comments-list">
+                    ${comentariosHTML}
+                </div>
+                
+                <div class="comment-form">
+                    <input type="text" class="comment-name" placeholder="Tu nombre (opcional)">
+                    <textarea class="comment-text" placeholder="Escribe tu comentario aquí..." rows="3"></textarea>
+                    <button type="button" onclick="agregarComentario(this)" class="comment-btn">
+                        Agregar Comentario
+                    </button>
+                </div>
+            </div>
         `;
         
         container.appendChild(storyDiv);
@@ -73,7 +159,8 @@ function agregarHistoria(event) {
         nombre: nombre,
         categoria: categoria,
         historia: historia,
-        anonimo: anonimo
+        anonimo: anonimo,
+        comentarios: []
     };
     
     // Agregar al array
@@ -198,16 +285,17 @@ function contadorCaracteres() {
 // Actualizar contador
 function actualizarContador() {
     const textarea = document.getElementById('historia');
+    const contador = document.getElementById('contador');
     const maxLength = 500;
-	
-	const current = textarea.value.length;
-	contador.textContent = `${current}/${maxLength} caracteres`;
-	
-	if (current > maxLength * 0.9) {
-		contador.style.color = '#ff6b6b';
-	} else {
-		contador.style.color = '#6B6B6B';
-	}
+    
+    const current = textarea.value.length;
+    contador.textContent = `${current}/${maxLength} caracteres`;
+    
+    if (current > maxLength * 0.9) {
+        contador.style.color = '#ff6b6b';
+    } else {
+        contador.style.color = '#6B6B6B';
+    }
 }
 
 // Función para detectar crisis en el texto (palabras clave)
@@ -281,6 +369,6 @@ document.addEventListener('DOMContentLoaded', function() {
             to { opacity: 1; transform: translateY(0); }
         }
     `;
-     
+    
     document.head.appendChild(style);
 });
